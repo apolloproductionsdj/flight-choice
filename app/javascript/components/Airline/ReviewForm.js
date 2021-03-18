@@ -3,16 +3,16 @@ import styled from 'styled-components';
 
 
 
-function ReviewForm() {
+function ReviewForm(props) {
     return (
         <div className="wrapper">
-            <form>
-                <div>Have an experience with [Airline Name]? Share Your Review</div>
+            <form onSubmit={props.handleSubmit}>
+                <div>Have an experience with {props.attributes.name}? Share Your Review</div>
                 <div className="field">
-                    <input type="text" name="title" placeholder="Review Title" />
+                    <input onChange={props.handleChange} value={props.review.title} type="text" name="title" placeholder="Review Title" />
                 </div>
                 <div className="field">
-                    <input type="description" name="description" placeholder="Review Description" />
+                    <input onChange={props.handleChange} value={props.review.description} type="description" name="description" placeholder="Review Description" />
                 </div>
                 <div className="field">
                     <div className="rating-container">
