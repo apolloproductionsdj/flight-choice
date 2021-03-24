@@ -110,7 +110,7 @@ const RatingTitle = styled.div`
 `;
 
 
-function ReviewForm(props) {
+const ReviewForm = (props) => {
     const ratingOptions = [5, 4, 3, 2, 1].map((score, index) => {
         return (
             <Fragment>
@@ -122,7 +122,7 @@ function ReviewForm(props) {
 
     return (
         <Wrapper>
-            <form onSubmit={props.handleSubmit}>
+            <form onsubmit={props.handleSubmit}>
                 <Headline>Have an experience with {props.attributes.name}? Share Your Review</Headline>
                 <Field>
                     <input onChange={props.handleChange} value={props.review.title} type="text" name="title" placeholder="Review Title" />
@@ -138,7 +138,7 @@ function ReviewForm(props) {
                         </RatingBox>
                     </RatingContainer>
                 </Field>
-                <SubmitBtn type="submit">Submit Your Review</SubmitBtn>
+                <button onsubmit={props.handleSubmit}><SubmitBtn type="submit">Submit Your Review</SubmitBtn></button>
             </form>
         </Wrapper>
     )
